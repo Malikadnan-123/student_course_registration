@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="navbar">
+
+        <a href="/">Home</a>
+
+        <a href="/departments">Departments</a>
+
+        <a href="/students">Students</a>
+
+        <a href="/professors">Professors</a>
+
+        <a href="/subjects">Subjects</a>
+
+        <a href="/enrollments">Enrollments</a>
+
+    </div>
+
+    <h1>Add New Student</h1>
+
+    <form action="/add_student" method="POST">
+
+        <label>USN:</label>
+        <input type="text" name="usn" required>
+        <br><br>
+
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <br><br>
+
+        <label>Address:</label>
+        <input type="text" name="address" required>
+        <br><br>
+
+        <label>Phone:</label>
+        <input type="text" name="phone" required>
+        <br><br>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <br><br>
+
+        <label>Gender:</label>
+        <select name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <br><br>
+
+        <label>Semester:</label>
+        <input type="number" name="sem" min="1" max="8" required>
+        <br><br>
+
+        <label>Department:</label>
+        <select name="dept_id">
+            <option value="CSE">CSE</option>
+            <option value="ISE">ISE</option>
+            <option value="ECE">ECE</option>
+            <option value="ME">ME</option>
+            <option value="CE">CE</option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Add Student">
+
+    </form>
+
+    <footer>
+        <hr>
+        <p>
+            Student Course Registration System |
+            DBMS Mini Project |
+            BIT Bangalore
+        </p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Subject</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/departments">Departments</a>
+        <a href="/students">Students</a>
+        <a href="/professors">Professors</a>
+        <a href="/subjects">Subjects</a>
+        <a href="/enrollments">Enrollments</a>
+    </div>
+
+    <h1>Add Subject</h1>
+
+    <form action="/select_professors" method="POST">
+
+        <label>Subject Code:</label>
+        <input type="text" name="sub_code" required>
+
+        <br><br>
+
+        <label>Subject Name:</label>
+        <input type="text" name="sub_name" required>
+
+        <br><br>
+
+        <label>Semester:</label>
+        <input type="number" name="sem" min="1" max="8" required>
+
+        <br><br>
+
+        <label>Department:</label>
+
+        <select name="dept_id">
+
+            {% for dept in departments %}
+
+            <option value="{{ dept[0] }}">
+                {{ dept[1] }}
+            </option>
+
+            {% endfor %}
+
+        </select>
+
+        <br><br>
+
+        <label>Credits:</label>
+
+        <input type="number" name="credits" min="1" max="5" required>
+
+        <br><br>
+
+        <input type="submit" value="Next">
+
+    </form>
+
+    {% if professors %}
+
+    <hr>
+
+    <h2>Assign Professor</h2>
+
+    <form action="/insert_subject" method="POST">
+
+        <input type="hidden" name="sub_code" value="{{ sub_code }}">
+
+        <input type="hidden" name="sub_name" value="{{ sub_name }}">
+
+        <input type="hidden" name="sem" value="{{ sem }}">
+
+        <input type="hidden" name="dept_id" value="{{ dept_id }}">
+
+        <input type="hidden" name="credits" value="{{ credits }}">
+
+        <label>Professor:</label>
+
+        <select name="prof_id">
+
+            {% for professor in professors %}
+
+            <option value="{{ professor[0] }}">
+                {{ professor[1] }}
+            </option>
+
+            {% endfor %}
+
+        </select>
+
+        <br><br>
+
+        <input type="submit" value="Add Subject">
+
+    </form>
+
+    {% endif %}
+
+    <footer>
+        <hr>
+        <p>
+            Student Course Registration System |
+            DBMS Mini Project |
+            BIT Bangalore
+        </p>
+    </footer>
+
+</body>
+
+</html>

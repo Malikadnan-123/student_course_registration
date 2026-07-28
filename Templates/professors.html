@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Professors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="navbar">
+
+        <a href="/">Home</a>
+
+        <a href="/departments">Departments</a>
+
+        <a href="/students">Students</a>
+
+        <a href="/professors">Professors</a>
+
+        <a href="/subjects">Subjects</a>
+
+        <a href="/enrollments">Enrollments</a>
+
+    </div>
+
+    <h1>Professor Details</h1>
+
+    <table border="1">
+
+        <tr>
+            <th>Professor ID</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Department</th>
+        </tr>
+
+        {% for professor in professors %}
+        <tr>
+            <td>{{ professor[0] }}</td>
+            <td>{{ professor[1] }}</td>
+            <td>{{ professor[2] }}</td>
+            <td>{{ professor[3] }}</td>
+            <td>{{ professor[4] }}</td>
+            <td>{{ professor[5] }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <div class="action-buttons">
+
+        <a href="/add_professor">
+            <button>Add Professor</button>
+        </a>
+
+        <a href="/search_professor">
+            <button>Search Professor</button>
+        </a>
+
+        <a href="/update_professor">
+            <button>Update Professor</button>
+        </a>
+
+    </div>
+
+    <footer>
+        <hr>
+        <p>
+            Student Course Registration System |
+            DBMS Mini Project |
+            BIT Bangalore
+        </p>
+    </footer>
+
+</body>
+
+</html>

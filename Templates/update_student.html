@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Update Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="navbar">
+
+        <a href="/">Home</a>
+
+        <a href="/departments">Departments</a>
+
+        <a href="/students">Students</a>
+
+        <a href="/professors">Professors</a>
+
+        <a href="/subjects">Subjects</a>
+
+        <a href="/enrollments">Enrollments</a>
+
+    </div>
+
+    <h1>Update Student</h1>
+
+    <form action="/find_student" method="POST">
+
+        <label>Enter USN:</label>
+        <input type="text" name="usn" required>
+
+        <input type="submit" value="Search">
+
+    </form>
+
+    <br>
+
+    {% if student %}
+
+    <form action="/update_student_data" method="POST">
+
+        <label>USN:</label>
+        <input type="text" name="usn" value="{{ student[0] }}" readonly>
+        <br><br>
+
+        <label>Name:</label>
+        <input type="text" name="name" value="{{ student[1] }}" required>
+        <br><br>
+
+        <label>Address:</label>
+        <input type="text" name="address" value="{{ student[2] }}" required>
+        <br><br>
+
+        <label>Phone:</label>
+        <input type="text" name="phone" value="{{ student[3] }}" required>
+        <br><br>
+
+        <label>Email:</label>
+        <input type="email" name="email" value="{{ student[4] }}" required>
+        <br><br>
+
+        <label>Gender:</label>
+        <input type="text" name="gender" value="{{ student[5] }}" required>
+        <br><br>
+
+        <label>Semester:</label>
+        <input type="number" name="sem" value="{{ student[6] }}" required>
+        <br><br>
+
+        <label>Department:</label>
+        <input type="text" name="dept_id" value="{{ student[7] }}" required>
+        <br><br>
+
+        <input type="submit" value="Update Student">
+
+    </form>
+
+    {% elif request.method == 'POST' %}
+
+    <h3>No student found with the given USN.</h3>
+
+    {% endif %}
+
+    <footer>
+        <hr>
+        <p>
+            Student Course Registration System |
+            DBMS Mini Project |
+            BIT Bangalore
+        </p>
+    </footer>
+
+</body>
+
+</html>

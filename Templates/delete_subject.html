@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Delete Subject</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/departments">Departments</a>
+        <a href="/students">Students</a>
+        <a href="/professors">Professors</a>
+        <a href="/subjects">Subjects</a>
+        <a href="/enrollments">Enrollments</a>
+    </div>
+
+    <h1>Delete Subject</h1>
+
+    <form action="/delete_subject" method="POST">
+
+        <label>Subject Code:</label>
+        <input type="text" name="sub_code" required>
+
+        <input type="submit" value="Delete">
+
+    </form>
+
+    {% if message %}
+    <div class="success-message">
+        {{ message }}
+    </div>
+    {% endif %}
+
+    <footer>
+        <hr>
+        <p>
+            Student Course Registration System |
+            DBMS Mini Project |
+            BIT Bangalore
+        </p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Enrollments</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="navbar">
+
+        <a href="/">Home</a>
+
+        <a href="/departments">Departments</a>
+
+        <a href="/students">Students</a>
+
+        <a href="/professors">Professors</a>
+
+        <a href="/subjects">Subjects</a>
+
+        <a href="/enrollments">Enrollments</a>
+
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+
+    <div class="success-message">
+        {{ message }}
+    </div>
+
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <h1>Enrollment Details</h1>
+
+    <table border="1">
+
+        <tr>
+            <th>USN</th>
+            <th>Student Name</th>
+            <th>Subject</th>
+            <th>Enrollment Date</th>
+            <th>Status</th>
+        </tr>
+
+        {% for enrollment in enrollments %}
+        <tr>
+            <td>{{ enrollment[0] }}</td>
+            <td>{{ enrollment[1] }}</td>
+            <td>{{ enrollment[2] }}</td>
+            <td>{{ enrollment[3] }}</td>
+            <td>{{ enrollment[4] }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <div class="action-buttons">
+
+        <a href="/add_enrollment">
+            <button>Add Enrollment</button>
+        </a>
+
+        <a href="/search_enrollment">
+            <button>Search Enrollment</button>
+        </a>
+
+        <a href="/update_enrollment">
+            <button>Update Enrollment</button>
+        </a>
+
+        <a href="/delete_enrollment">
+            <button>Delete Enrollment</button>
+        </a>
+
+    </div>
+
+    <footer>
+        <hr>
+        <p>
+            Student Course Registration System |
+            DBMS Mini Project |
+            BIT Bangalore
+        </p>
+    </footer>
+
+</body>
+
+</html>
