@@ -158,13 +158,6 @@ This project demonstrates:
 - Stored Procedures
 - Frontend-Backend Integration
 
----
-
-## 👨‍💻 Author
-
-**Abhinav Kumar**
-
-GitHub: https://github.com/Abhinav-Ind
 
 ---
 
