@@ -123,7 +123,8 @@ VALUES
 -- CSE 4th Semester (Given Data)
 ('1BI24CS002', 'Abhinav Kumar', 'Begusarai, Bihar', '9000000004', '1BI24CS002@bit-bangalore.edu.in', 'Male', 4, 'CSE'),
 ('1BI24CS005', 'Adarsh Anand', 'Muzaffarpur, Bihar', '9000000005', '1BI24CS005@bit-bangalore.edu.in', 'Male', 4, 'CSE'),
-('1BI24CS015', 'Ananya J', 'Bangalore, Karnataka', '9000000006', '1BI24CS015@bit-bangalore.edu.in', 'Female', 4, 'CSE'),
+('1BI24CS008', 'Adnan Hassan', 'kulgam, Kashmir', '9000000006', '1BI24CS008@bit-bangalore.edu.in', 'Male', 4, 'CSE'),
+('1BI24CS015', 'Ananya J', 'Bangalore, Karnataka', '9000000007', '1BI24CS015@bit-bangalore.edu.in', 'Female', 4, 'CSE'),
 
 -- CSE 6th Semester
 ('1BI23CS003', 'Nikhil Sharma', 'Kanpur, Uttar Pradesh', '9000000007', '1BI23CS003@bit-bangalore.edu.in', 'Male', 6, 'CSE'),
